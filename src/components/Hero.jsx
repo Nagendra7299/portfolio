@@ -81,7 +81,7 @@ export default function Hero() {
         {/* Social icons */}
         <div className="flex gap-4 justify-center">
           {[
-            { icon: <GithubIcon />, href: 'https://github.com/', label: 'GitHub' },
+            { icon: <GithubIcon />, href: 'https://github.com/Nagendra7299', label: 'GitHub' },
             { icon: <LinkedinIcon />, href: 'https://linkedin.com/in/', label: 'LinkedIn' },
             { icon: <MailIcon />, href: 'mailto:ravillanagendra999@gmail.com', label: 'Email' },
           ].map(({ icon, href, label }) => (
