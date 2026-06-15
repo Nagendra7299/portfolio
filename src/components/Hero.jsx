@@ -83,7 +83,7 @@ export default function Hero() {
           {[
             { icon: <GithubIcon />, href: 'https://github.com/Nagendra7299', label: 'GitHub' },
             { icon: <LinkedinIcon />, href: 'https://linkedin.com/in/', label: 'LinkedIn' },
-            { icon: <MailIcon />, href: 'mailto:ravillanagendra999@gmail.com', label: 'Email' },
+            { icon: <MailIcon />, href: 'mailto:nagendrachowdary729@gmail.com', label: 'Email' },
           ].map(({ icon, href, label }) => (
             <a
               key={label}

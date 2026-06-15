@@ -1,8 +1,8 @@
 const contactLinks = [
   {
     label: 'Email',
-    value: 'ravillanagendra999@gmail.com',
-    href: 'mailto:ravillanagendra999@gmail.com',
+    value: 'nagendrachowdary729@gmail.com',
+    href: 'mailto:nagendrachowdary729@gmail.com',
     icon: (
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <rect x="2" y="4" width="20" height="16" rx="2" />
@@ -46,7 +46,7 @@ export default function Contact() {
 
         {/* Email CTA */}
         <a
-          href="mailto:ravillanagendra999@gmail.com"
+          href="mailto:nagendrachowdary729@gmail.com"
           className="inline-flex items-center gap-3 px-8 py-4 bg-violet-600 hover:bg-violet-500 text-white rounded-xl font-semibold text-sm transition-all duration-200 shadow-lg shadow-violet-900/30 hover:shadow-violet-800/50 mb-16"
         >
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
