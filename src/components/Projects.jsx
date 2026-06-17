@@ -33,11 +33,11 @@ const projects = [
   {
     title: 'Real-Time Object Detection',
     description:
-      'YOLOv8-based detection pipeline with custom dataset training. Achieved 89% mAP on the target domain. Includes a Streamlit dashboard for live webcam inference and video upload.',
-    tags: ['YOLOv8', 'OpenCV', 'Python', 'Streamlit', 'PyTorch'],
-    github: null,
-    demo: null,
-    highlight: false,
+      'YOLOv8n object detection on COCO (80 classes). Upload any image — bounding boxes and class labels rendered instantly. Adjustable confidence threshold. Model pre-loaded at container startup for zero cold-start latency. Deployed on Hugging Face Spaces via Docker.',
+    tags: ['YOLOv8', 'Ultralytics', 'OpenCV', 'Gradio', 'Docker'],
+    github: 'https://github.com/Nagendra7299/object-detection-yolov8',
+    demo: 'https://huggingface.co/spaces/Nagendra729/object-detection',
+    highlight: true,
   },
   {
     title: 'RAG-Based QA System',
