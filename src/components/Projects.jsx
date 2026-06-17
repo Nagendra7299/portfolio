@@ -52,6 +52,15 @@ const projects = [
     highlight: true,
   },
   {
+    title: 'AI Research Agent',
+    description:
+      'Autonomous research agent built with LangGraph (ReAct pattern). Dynamically chooses between web search, Wikipedia, and a safe calculator tool, then synthesizes a final answer. Streamlit UI, powered by Groq gpt-oss-120b, deployed on Hugging Face Spaces via Docker.',
+    tags: ['LangGraph', 'LangChain', 'Groq', 'Streamlit', 'Docker'],
+    github: 'https://github.com/Nagendra7299/ai-research-agent',
+    demo: 'https://huggingface.co/spaces/Nagendra729/ai-research-agent',
+    highlight: true,
+  },
+  {
     title: 'Real-Time Object Detection',
     description:
       'YOLOv8-based detection pipeline with custom dataset training. Achieved 89% mAP on the target domain. Includes a Streamlit dashboard for live webcam inference and video upload.',
