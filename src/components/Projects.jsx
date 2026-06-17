@@ -47,8 +47,8 @@ const projects = [
     description:
       'Fine-tuned BERT model for multi-class sentiment classification deployed as a FastAPI service. Handles 1000+ requests/min with sub-100ms latency. Includes confidence scores and batch inference support.',
     tags: ['PyTorch', 'HuggingFace', 'FastAPI', 'Docker', 'BERT'],
-    github: null,
-    demo: null,
+    github: 'https://github.com/Nagendra7299/sentiment-analysis-app',
+    demo: 'https://huggingface.co/spaces/Nagendra729/Sentiment-analysis',
     highlight: true,
   },
   {
