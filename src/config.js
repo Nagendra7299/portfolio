@@ -21,7 +21,7 @@ export const profile = {
 
   // Formspree: sign up free at https://formspree.io, create a form,
   // paste the form ID (the part after /f/). Empty = contact form falls back to mailto.
-  formspreeId: '',
+  formspreeId: 'xeewwbrv',
 }
 
 // Short professional tagline (recruiter-facing, keyword-rich)
