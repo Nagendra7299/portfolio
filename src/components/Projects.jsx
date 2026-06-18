@@ -16,6 +16,16 @@ const GithubIcon = () => (
 
 const projects = [
   {
+    title: 'LLM Fine-Tuning (QLoRA)',
+    description:
+      'Fine-tuned Mistral-7B for text-to-SQL using QLoRA (4-bit + LoRA adapters) on a single free GPU. Trained on 8k schema/question/SQL triples with Unsloth + PEFT; only ~0.6% of params updated. Includes base-vs-tuned exact-match evaluation. Works below the API layer — adapter published to the HF Hub.',
+    tags: ['QLoRA', 'PEFT', 'Unsloth', 'Mistral-7B', 'HuggingFace'],
+    github: 'https://github.com/Nagendra7299/text-to-sql-lora',
+    demo: 'https://huggingface.co/Nagendra729/mistral-7b-text-to-sql-lora',
+    demoLabel: 'Model + Notebook',
+    highlight: true,
+  },
+  {
     title: 'AI Research Agent',
     description:
       'Autonomous research agent built with LangGraph (ReAct pattern). Dynamically picks between web search, Wikipedia, and a safe calculator tool, then synthesizes a cited answer. Shows its reasoning steps in real time.',
@@ -98,7 +108,7 @@ function ProjectCard({ p }) {
             rel="noopener noreferrer"
             className="flex items-center gap-1.5 text-xs text-zinc-400 hover:text-white transition-colors"
           >
-            <ExternalLinkIcon /> Live Demo
+            <ExternalLinkIcon /> {p.demoLabel || 'Live Demo'}
           </a>
         )}
       </div>
@@ -116,8 +126,8 @@ export default function Projects() {
           <p className="text-violet-400 text-sm font-medium uppercase tracking-widest mb-3">What I've Built</p>
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Featured Projects</h2>
           <p className="text-zinc-400 max-w-xl mx-auto">
-            Every project below is <span className="text-zinc-300">live, open-source, and runnable</span> —
-            click any demo to try it in your browser.
+            Open-source, end-to-end AI systems — <span className="text-zinc-300">most with live demos</span> you
+            can try in your browser, all with code on GitHub.
           </p>
         </div>
 
