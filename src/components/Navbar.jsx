@@ -1,7 +1,9 @@
 import { useState, useEffect } from 'react'
+import { profile } from '../config'
 
 const navLinks = [
   { label: 'Home', href: '#home' },
+  { label: 'About', href: '#about' },
   { label: 'Skills', href: '#skills' },
   { label: 'Projects', href: '#projects' },
   { label: 'Contact', href: '#contact' },
@@ -27,7 +29,7 @@ export default function Navbar() {
     >
       <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
         <a href="#home" className="text-sm font-semibold text-white tracking-wide">
-          NC<span className="text-violet-400">.</span>
+          {profile.initials}<span className="text-violet-400">.</span>
         </a>
 
         {/* Desktop links */}
@@ -41,6 +43,15 @@ export default function Navbar() {
               {l.label}
             </a>
           ))}
+          {profile.resume && (
+            <a
+              href={profile.resume}
+              download
+              className="text-sm px-4 py-1.5 rounded-md border border-zinc-700 hover:border-violet-500 text-zinc-300 hover:text-white font-medium transition-colors"
+            >
+              Resume
+            </a>
+          )}
           <a
             href="#contact"
             className="text-sm px-4 py-1.5 rounded-md bg-violet-600 hover:bg-violet-500 text-white font-medium transition-colors"
@@ -80,6 +91,16 @@ export default function Navbar() {
               {l.label}
             </a>
           ))}
+          {profile.resume && (
+            <a
+              href={profile.resume}
+              download
+              className="text-sm text-violet-300 hover:text-white transition-colors"
+              onClick={() => setMenuOpen(false)}
+            >
+              Download Resume
+            </a>
+          )}
         </div>
       )}
     </nav>

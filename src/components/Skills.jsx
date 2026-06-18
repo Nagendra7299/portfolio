@@ -1,41 +1,55 @@
+import { useReveal } from '../hooks/useReveal'
+
 const categories = [
   {
-    title: 'AI & Machine Learning',
-    icon: '🧠',
-    skills: ['PyTorch', 'TensorFlow', 'Scikit-learn', 'Keras', 'XGBoost', 'LightGBM', 'OpenCV', 'YOLO'],
+    title: 'Generative AI & LLMs',
+    icon: '✨',
+    skills: ['LangChain', 'LangGraph', 'RAG', 'LLM Agents', 'HuggingFace', 'Groq', 'OpenAI API', 'Prompt Engineering'],
   },
   {
-    title: 'NLP & Generative AI',
-    icon: '💬',
-    skills: ['HuggingFace', 'LangChain', 'OpenAI API', 'BERT', 'GPT Fine-tuning', 'RAG', 'Transformers', 'spaCy'],
+    title: 'Vector DBs & Retrieval',
+    icon: '🔎',
+    skills: ['ChromaDB', 'FAISS', 'Pinecone', 'Embeddings', 'Sentence-Transformers', 'Semantic Search'],
+  },
+  {
+    title: 'ML & Deep Learning',
+    icon: '🧠',
+    skills: ['PyTorch', 'TensorFlow', 'Scikit-learn', 'Keras', 'XGBoost', 'OpenCV', 'YOLOv8', 'Transformers'],
   },
   {
     title: 'Languages & Data',
     icon: '🐍',
-    skills: ['Python', 'SQL', 'R', 'Pandas', 'NumPy', 'PySpark', 'Matplotlib', 'Seaborn'],
+    skills: ['Python', 'SQL', 'Pandas', 'NumPy', 'PySpark', 'FastAPI', 'Streamlit', 'Gradio'],
   },
   {
-    title: 'MLOps & Tools',
+    title: 'Cloud & Deployment',
+    icon: '☁️',
+    skills: ['AWS', 'Azure', 'GCP', 'Docker', 'Vercel', 'HuggingFace Spaces', 'SageMaker', 'Vertex AI'],
+  },
+  {
+    title: 'MLOps & Tooling',
     icon: '⚙️',
-    skills: ['MLflow', 'FastAPI', 'Docker', 'Git', 'AWS SageMaker', 'GCP Vertex AI', 'Jupyter', 'Airflow'],
+    skills: ['MLflow', 'CI/CD', 'GitHub Actions', 'Git', 'Airflow', 'Docker Compose', 'REST APIs', 'Linux'],
   },
 ]
 
 export default function Skills() {
+  const ref = useReveal()
+
   return (
     <section id="skills" className="py-24 px-6">
-      <div className="max-w-6xl mx-auto">
+      <div ref={ref} className="reveal max-w-6xl mx-auto">
         {/* Section header */}
         <div className="text-center mb-16">
           <p className="text-violet-400 text-sm font-medium uppercase tracking-widest mb-3">What I Work With</p>
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Skills & Technologies</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Skills &amp; Technologies</h2>
           <p className="text-zinc-400 max-w-xl mx-auto">
-            A curated toolkit for building end-to-end ML solutions — from research to production.
+            A full-stack AI toolkit — from LLM orchestration and vector search to cloud deployment and MLOps.
           </p>
         </div>
 
         {/* Category grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {categories.map((cat) => (
             <div
               key={cat.title}

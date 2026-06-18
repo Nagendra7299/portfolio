@@ -1,3 +1,6 @@
+import { useReveal } from '../hooks/useReveal'
+import { profile } from '../config'
+
 const ExternalLinkIcon = () => (
   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
     <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6" />
@@ -13,66 +16,39 @@ const GithubIcon = () => (
 
 const projects = [
   {
-    title: 'Sentiment Analysis API',
-    description:
-      'Fine-tuned BERT model for multi-class sentiment classification deployed as a FastAPI service. Handles 1000+ requests/min with sub-100ms latency. Includes confidence scores and batch inference support.',
-    tags: ['PyTorch', 'HuggingFace', 'FastAPI', 'Docker', 'BERT'],
-    github: 'https://github.com/Nagendra7299/sentiment-analysis-app',
-    demo: 'https://huggingface.co/spaces/Nagendra729/Sentiment-analysis',
-    highlight: true,
-  },
-  {
     title: 'AI Research Agent',
     description:
-      'Autonomous research agent built with LangGraph (ReAct pattern). Dynamically chooses between web search, Wikipedia, and a safe calculator tool, then synthesizes a final answer. Streamlit UI, powered by Groq gpt-oss-120b, deployed on Hugging Face Spaces via Docker.',
+      'Autonomous research agent built with LangGraph (ReAct pattern). Dynamically picks between web search, Wikipedia, and a safe calculator tool, then synthesizes a cited answer. Shows its reasoning steps in real time.',
     tags: ['LangGraph', 'LangChain', 'Groq', 'Streamlit', 'Docker'],
     github: 'https://github.com/Nagendra7299/ai-research-agent',
     demo: 'https://huggingface.co/spaces/Nagendra729/ai-research-agent',
     highlight: true,
   },
   {
-    title: 'Real-Time Object Detection',
+    title: 'RAG Document QA System',
     description:
-      'YOLOv8n object detection on COCO (80 classes). Upload any image — bounding boxes and class labels rendered instantly. Adjustable confidence threshold. Model pre-loaded at container startup for zero cold-start latency. Deployed on Hugging Face Spaces via Docker.',
-    tags: ['YOLOv8', 'Ultralytics', 'OpenCV', 'Gradio', 'Docker'],
-    github: 'https://github.com/Nagendra7299/object-detection-yolov8',
-    demo: 'https://huggingface.co/spaces/Nagendra729/object-detection',
+      'Retrieval-Augmented Generation for document Q&A. Upload a PDF, ask questions, get streamed answers with per-source page citations. Local sentence-transformer embeddings (zero embedding cost) + ChromaDB vector store + Groq LLM.',
+    tags: ['LangChain', 'ChromaDB', 'RAG', 'FastAPI', 'Streamlit'],
+    github: 'https://github.com/Nagendra7299/rag-qa-system',
+    demo: 'https://huggingface.co/spaces/Nagendra729/rag-document-qa',
     highlight: true,
   },
   {
-    title: 'RAG-Based QA System',
+    title: 'Real-Time Object Detection',
     description:
-      'Retrieval-Augmented Generation system for document Q&A. Upload PDFs/DOCX, ask questions, get streamed answers with per-source page citations. LangChain + ChromaDB, local sentence-transformer embeddings, Groq LLM, FastAPI + Streamlit. Deployed on Hugging Face Spaces.',
-    tags: ['LangChain', 'ChromaDB', 'Groq', 'FastAPI', 'Streamlit'],
-    github: 'https://github.com/Nagendra7299/rag-qa-system',
-    demo: 'https://huggingface.co/spaces/Nagendra729/rag-document-qa',
+      'YOLOv8n object detection on COCO (80 classes). Upload any image — bounding boxes and class labels render instantly with an adjustable confidence threshold. Model pre-loaded at container startup for zero cold-start latency.',
+    tags: ['YOLOv8', 'Ultralytics', 'OpenCV', 'Gradio', 'Docker'],
+    github: 'https://github.com/Nagendra7299/object-detection-yolov8',
+    demo: 'https://huggingface.co/spaces/Nagendra729/object-detection',
     highlight: false,
   },
   {
-    title: 'Sales Forecasting with LSTM',
+    title: 'Sentiment Analysis App',
     description:
-      'Time-series forecasting model using stacked LSTM networks for retail sales prediction. Reduced MAPE by 23% over baseline ARIMA. Features automated retraining via Airflow DAGs.',
-    tags: ['TensorFlow', 'Pandas', 'Airflow', 'MLflow', 'SQL'],
-    github: null,
-    demo: null,
-    highlight: false,
-  },
-  {
-    title: 'Medical Image Classifier',
-    description:
-      'CNN-based chest X-ray classification system for pneumonia detection. ResNet-50 transfer learning, 96% accuracy on held-out test set. HIPAA-compliant inference pipeline.',
-    tags: ['Keras', 'TensorFlow', 'OpenCV', 'Python', 'ResNet'],
-    github: null,
-    demo: null,
-    highlight: false,
-  },
-  {
-    title: 'ML Pipeline Orchestration',
-    description:
-      'End-to-end MLOps pipeline with automated data validation, model training, evaluation gates, and deployment. Reduces model release cycle from days to hours using GitHub Actions + MLflow.',
-    tags: ['MLflow', 'Docker', 'GitHub Actions', 'FastAPI', 'AWS'],
-    github: null,
-    demo: null,
+      'Multi-class sentiment classifier using a RoBERTa model fine-tuned on social-media text. Single-text and batch-analysis modes with confidence scores. Packaged as a clean Gradio interface and deployed on Hugging Face Spaces.',
+    tags: ['HuggingFace', 'RoBERTa', 'Transformers', 'Gradio', 'NLP'],
+    github: 'https://github.com/Nagendra7299/sentiment-analysis-app',
+    demo: 'https://huggingface.co/spaces/Nagendra729/Sentiment-analysis',
     highlight: false,
   },
 ]
@@ -131,6 +107,8 @@ function ProjectCard({ p }) {
 }
 
 export default function Projects() {
+  const ref = useReveal()
+
   return (
     <section id="projects" className="py-24 px-6 bg-zinc-900/20">
       <div className="max-w-6xl mx-auto">
@@ -138,11 +116,12 @@ export default function Projects() {
           <p className="text-violet-400 text-sm font-medium uppercase tracking-widest mb-3">What I've Built</p>
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Featured Projects</h2>
           <p className="text-zinc-400 max-w-xl mx-auto">
-            A selection of ML systems and AI applications built for real-world impact.
+            Every project below is <span className="text-zinc-300">live, open-source, and runnable</span> —
+            click any demo to try it in your browser.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div ref={ref} className="reveal-stagger grid grid-cols-1 md:grid-cols-2 gap-6">
           {projects.map((p) => (
             <ProjectCard key={p.title} p={p} />
           ))}
@@ -150,7 +129,7 @@ export default function Projects() {
 
         <div className="text-center mt-12">
           <a
-            href="https://github.com/Nagendra7299"
+            href={profile.github}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 text-sm text-zinc-400 hover:text-white border border-zinc-700 hover:border-zinc-500 px-5 py-2.5 rounded-lg transition-all duration-200"
