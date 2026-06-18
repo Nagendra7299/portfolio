@@ -58,7 +58,7 @@ const projects = [
       'Multi-class sentiment classifier using a RoBERTa model fine-tuned on social-media text. Single-text and batch-analysis modes with confidence scores. Packaged as a clean Gradio interface and deployed on Hugging Face Spaces.',
     tags: ['HuggingFace', 'RoBERTa', 'Transformers', 'Gradio', 'NLP'],
     github: 'https://github.com/Nagendra7299/sentiment-analysis-app',
-    demo: 'https://huggingface.co/spaces/Nagendra729/Sentiment-analysis',
+    demo: null,
     highlight: false,
   },
 ]
