@@ -13,9 +13,7 @@ export const profile = {
   github: 'https://github.com/Nagendra7299',
   huggingface: 'https://huggingface.co/Nagendra729',
 
-  // TODO: paste your full LinkedIn URL here (e.g. https://linkedin.com/in/nagendra-chowdary)
-  // Leave empty string to hide LinkedIn links entirely (no broken links).
-  linkedin: '',
+  linkedin: 'https://www.linkedin.com/in/nagendra729/',
 
   // Drop your resume PDF at portfolio/public/resume.pdf — this path serves it.
   // Leave empty string to hide the resume button.
